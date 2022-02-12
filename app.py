@@ -24,7 +24,7 @@ def predict():
     prediction = model.predict(final_features)
     output = round(prediction[0], 2)
 
-    return render_template("index.html", prediction_text='Your predicted bike value is $ {}'.format(output))
+    return render_template("index.html", prediction_text='Your predicted bike value is Rs. {}'.format(output))
 
 @app.route('/results',methods=['POST'])
 def results():
