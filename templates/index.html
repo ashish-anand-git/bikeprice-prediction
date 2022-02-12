@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background: rgb(252, 250, 250);">
+  <div class="login">
+   <h1>Bike Price Predictor</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+      <label for="age" colo>Age(in years):  </label>
+      <input type="text" name="age" placeholder="age" required="required">
+      <br>
+      <br>
+      <label for="power">POWER(cc):  </label>
+      <input type="text" name="power" placeholder="power" required="required">
+      <br>
+      <br>
+      <label for="kms_driven">Kilometres driven:  </label>
+      <input type="kms_driven" name="kms_driven" placeholder="kms_driven" required="required">
+      <br>
+      <br>
+      <label for="owner">Owner:  </label>
+      <select id="owner" name="owner" placeholder="owner", required="required">
+        <option value="0">First Owner</option>
+        <option value="1">Second Owner</option>
+      </select>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict Bike Price</button>
+    </form>
+    <br>
+    <br>
+    <h2>
+    {{ prediction_text }}
+    </h2>
+  </div>
+</body>
+</html>
